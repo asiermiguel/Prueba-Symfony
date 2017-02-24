@@ -1,3 +1,35 @@
 amp_user_homepage:
-    path:     /
+    path:     /hello/{name}
     defaults: { _controller: AMPUserBundle:Default:index }
+
+amp_user_index:
+    path:     /user/index
+    defaults: {_controller: AMPUserBundle:User:index }
+    
+amp_user_articles:
+    path:     /user/articles/{page}
+    defaults: {_controller: AMPUserBundle:User:articles, page: 1 }
+    requirements:
+        page: \d+
+ 
+amp_user_add:
+    path: /user/add
+    defaults: {_controller: AMPUserBundle:User:add}
+    
+amp_user_create:
+    path: /user/create
+    defaults: {_controller: AMPUserBundle:User:create}
+    methods: POST
+    
+amp_user_edit:
+    path: /user/edit/{id}
+    defaults: {_controller: AMPUserBundle:User:edit}
+    
+amp_user_view:
+    path: /user/view/{id}
+    defaults: {_controller: AMPUserBundle:User:view}
+    
+amp_user_delete:
+    path:   /user/delete/{id}
+    defaults: {_controller: AMPUserBundle:User:delete}
+ 
